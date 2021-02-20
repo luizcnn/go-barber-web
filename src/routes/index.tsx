@@ -4,14 +4,12 @@ import { Switch, Route } from 'react-router-dom';
 import SignIn from '../pages/SignIn';
 import SignUp from '../pages/SignUp';
 
-import { AuthProvider } from '../hooks/AuthContext';
+import { AuthProvider } from '../hooks/auth';
 
 const Routes: React.FC = () => {
   return (
     <Switch>
-      <AuthProvider>
-        <Route path="/" exact component={SignIn} />
-      </AuthProvider>
+      <Route path="/" exact component={SignIn} />
       <Route path="/sign-up" exact component={SignUp} />
     </Switch>
   );
